@@ -20,7 +20,9 @@ function getFromApi(userEnteredName) {
     .then((res) => res.json())
     .then((res) => {
       output = res;
-      showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${output.probability} certainty`;
+      showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${
+        output.probability * 100
+      }% certainty`;
     })
     .catch(
       (err) =>
