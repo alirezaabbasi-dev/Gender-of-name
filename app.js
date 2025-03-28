@@ -1,10 +1,10 @@
 "use strict";
 let $ = document;
 const nameInput = $.getElementById("name-input");
+const showOutPutElem = $.getElementById("show-output");
+const searchBtn = $.getElementById("Search");
 
-
-let userEnteredName = null;
-
+let userEnteredName, output;
 const nameRegex = /^[A-Za-z\s]+$/;
 
 function userInputFunc(e) {
@@ -13,8 +13,14 @@ function userInputFunc(e) {
   if (e.keyCode === 13 && nameRegex.test(userEnteredName)) {
     fetch(`https://api.genderize.io?name=${userEnteredName}`)
       .then((res) => res.json())
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        output = res;
+        showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${output.probability} certainty`;
+      })
+      .catch(
+        (err) =>
+          (showOutPutElem.innerHTML = "There was a problem, please try again.")
+      );
   }
 }
 
