@@ -11,17 +11,26 @@ function userInputFunc(e) {
   userEnteredName = e.target.value;
 
   if (e.keyCode === 13 && nameRegex.test(userEnteredName)) {
-    fetch(`https://api.genderize.io?name=${userEnteredName}`)
-      .then((res) => res.json())
-      .then((res) => {
-        output = res;
-        showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${output.probability} certainty`;
-      })
-      .catch(
-        (err) =>
-          (showOutPutElem.innerHTML = "There was a problem, please try again.")
-      );
+    getFromApi(userEnteredName);
   }
 }
 
+function getFromApi(userEnteredName) {
+  fetch(`https://api.genderize.io?name=${userEnteredName}`)
+    .then((res) => res.json())
+    .then((res) => {
+      output = res;
+      showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${output.probability} certainty`;
+    })
+    .catch(
+      (err) =>
+        (showOutPutElem.innerHTML = "There was a problem, please try again.")
+    );
+}
+
 nameInput.addEventListener("keyup", userInputFunc);
+searchBtn.addEventListener("click", () => {
+  if (nameRegex.test(userEnteredName)) {
+    getFromApi(userEnteredName);
+  }
+});
