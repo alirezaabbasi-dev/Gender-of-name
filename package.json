@@ -2,7 +2,6 @@
   "name": "gender-of-name",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./app.css --watch"
@@ -14,5 +13,6 @@
     "@tailwindcss/cli": "^4.0.17",
     "tailwindcss": "^4.0.17"
   },
+  "devDependencies": {},
   "description": ""
 }

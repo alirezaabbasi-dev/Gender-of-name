@@ -20,9 +20,18 @@ function getFromApi(userEnteredName) {
     .then((res) => res.json())
     .then((res) => {
       output = res;
-      showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${
-        output.probability * 100
-      }% certainty`;
+
+      if (output.gender) {
+        showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${
+          output.probability * 100
+        }% certainty`;
+
+        document.title = `${output.name} is ${output.gender}`;
+      } else {
+        showOutPutElem.innerHTML = `${userEnteredName} is not name`;
+
+        document.title = "Gender of name";
+      }
     })
     .catch(
       (err) =>
