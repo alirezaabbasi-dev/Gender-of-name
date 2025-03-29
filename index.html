@@ -2,30 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gender of name</title>
-    <link rel="stylesheet" href="app.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gender of name</title>
+  <link rel="stylesheet" href="app.css">
 
 </head>
 
 <body class="bg-indigo-950">
 
-    <div class="container w-full h-screen bg-indigo-500 flex flex-col items-center justify-center gap-2.5">
+  <div class="container w-full h-screen bg-indigo-500 flex flex-col items-center justify-center gap-2.5">
 
-      <div>
-        <input id="name-input" class="sm:w-full md:w-2/3 lg:w-2xl  h-10 bg-indigo-300 text-white rounded-sm outline-none px-2.5" placeholder="Enter the name ..." type="text">
-        <button id="Search" class="w-fit p-1.5 text-white cursor-pointer bg-amber-500" >Search</button>
-      </div>
-        <p id="show-output"  class= " text-white tracking-wider  sm:text-sm md:text-2xl" ></p>
+    <div>
+      <input id="name-input"
+        class="sm:w-full md:w-2/3 lg:w-2xl  h-10 bg-indigo-300 text-white rounded-sm outline-none px-2.5"
+        placeholder="Enter the name ..." type="text">
+      <button id="Search" class="w-fit p-1.5 text-white cursor-pointer bg-amber-500">Search</button>
     </div>
+    <p id="show-output" class="w-full break-words overflow-y-scroll text-white tracking-wider  sm:text-sm md:text-2xl">
+    </p>
+  </div>
 
 
 
 
 
 
-    <script src="./app.js"></script>
+  <script src="./app.js"></script>
 </body>
 
 </html>
