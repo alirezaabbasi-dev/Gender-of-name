@@ -1,5 +1,5 @@
 
-### for run this project just type in your ***terminal***
+### To run this project just type in your *terminal*
 
 ````
 npm install
