@@ -22,9 +22,9 @@ function getFromApi(userEnteredName) {
       output = res;
 
       if (output.gender) {
-        showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${
+        showOutPutElem.innerHTML = `${output.name} is ${output.gender} with ${(
           output.probability * 100
-        }% certainty`;
+        ).toFixed()}% certainty`;
 
         document.title = `${output.name} is ${output.gender}`;
       } else {
